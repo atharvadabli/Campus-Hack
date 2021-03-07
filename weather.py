@@ -82,8 +82,8 @@ def weather_message(data1,data2,data3,aqi,location):
 def weather_message2(data5,location):
     location = location.title()
     message = discord.Embed(
-        title=f' 8- Day Weather for {location}',
-        description=f'Here is the forecasted weather in {location}.',
+        title=f' 8- Day Weather Forecast for {location}',
+        description=f'Here is the forecasted weather for {location}.',
         color=color
     )
     for i in range(8):
@@ -96,24 +96,31 @@ def weather_message2(data5,location):
                 message.add_field(
                 name='Date',
                 value=(dt_obj),
-                inline=False
+                inline=True
             )
+            
             
 
             elif key == 'temp':
                 message.add_field(
-                name='Temperature',
+                name='  Temperature  ',
                 value=(data5[i][key]['day']),
-                inline=False
+                inline=True
             )
+            
             elif key == 'weather':
                 
                 
                 message.add_field(
-                name='Description',
+                name='  Description',
                 value=(data5[i][key][0]['description']),
-                inline=False)
-                
+                inline=True)
+            
+        # message.add_field(
+        #         name='______________________',
+        #         value= ,
+        #         inline=False
+        #     )    
     return message
 
 
@@ -122,7 +129,7 @@ def weather_message3(data7,date,location):
     location = location.title()
     message = discord.Embed(
         title=f'{location} Weather',
-        description=f'Here is the weather in {location} on {date}.',
+        description=f'Here is the weather forecast for {location} on {date}.',
         color=color
     )
     for key in data7['temp']:
@@ -175,6 +182,47 @@ def weather_message4(location,aqi):
         )
     
     return message
+def weather_message5():
+    message = discord.Embed(
+        title='AQI levels',
+        description='Here are the Air Quality Levels.',
+        color=color
+    )
+    message.add_field(
+            name= "0-50",
+            value= 'Good',
+            inline=False
+        )
+    
+    message.add_field(
+            name= "50-100",
+            value="Moderate",
+            inline=False
+        )
+    message.add_field(
+            name= "101-150",
+            value="Unhealthy for sensitive groups",
+            inline=False
+        )
+    message.add_field(
+            name= "150-200",
+            value= "Unhealthy",
+            inline=False
+        )
+    
+    message.add_field(
+            name= "201-300",
+            value= "Very Unhealthy",
+            inline=False
+        )
+
+    message.add_field(
+            name= "301-500",
+            value="Hazardous",
+            inline=False
+        )
+    
+    return message
 def weather_message6(data8,location):
     location = location.title()
     if data8 == []:
@@ -206,7 +254,45 @@ def weather_message6(data8,location):
         )
         
 
+def bot_intro():
+    message = discord.Embed(
+        title='Mausam Bot',
+        description='Hello! I am Mausam, a bot for all seasons. You can try any of these and tell me what to do !! Just write these commands and I am available for you !',
+        color=color
+    )
+    message.add_field(
+            name= "1.) mausam.city",
+            value= "I will tell how's the weather right now at that city. Temperature, Humidity, Air Quality etc. ",
+            inline=False
+        )
     
+    message.add_field(
+            name= "2.) forecast8days.city",
+            value=" will give a brief forecast of weather for next 8 days",
+            inline=False
+        )
+    message.add_field(
+            name= "3.) forecast.DD/MM/YYYYcity",
+            value="will give a bit detailed weather forecast of given date. Don't forget the format!",
+            inline=False
+        )
+    message.add_field(
+            name= "4.) aqi.city",
+            value= "will tell the quality of air around the city, the AQI level",
+            inline=False
+        )
+    
+    message.add_field(
+            name= "5.) val.aqi",
+            value= "will give the standard interpretation of AQI, so that you may know how healthy or unhealthy is the air.",
+            inline=False
+        ) 
+    message.add_field(
+            name= "6.)alerts.city",
+            value= "will give the the weather alerts issued by competent authorities to make people aware of the various storms,severe snow fall etc.",
+            inline=False
+    )
+    return message
 
 def error_message(location):
     location = location.title()
