@@ -14,7 +14,7 @@ To run our code, you must do the following installations:
 Once all the installations were done, we wrote the code and kept increasing the commands one by one and then finally debugged it and finalized it with the following commands.
 
 ## Commands:
-######  mausam._bot.intro
+######  mausam_bot.intro
 ######  mausam.location
 ######  forecast8days.location
 ######  forecast.datelocation
