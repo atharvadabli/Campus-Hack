@@ -3,6 +3,7 @@ import datetime
 import time
 
 color = 0xFF6500
+
 key_features = {
     'temp' : 'Temperature(Celsius)',
     'feels_like' : 'Feels Like(Celsius)',
@@ -31,6 +32,7 @@ def parse_data1(data):
     
     del data['pressure']
     return data
+
 def parse_data2(data):
     del data['main']
     del data['id']
@@ -56,8 +58,6 @@ def weather_message(data1,data2,data3,aqi,location):
             name= "Visibility(metres)",
             value=str(data2),
             inline=False)
-    
-    
     
     for key in data3 :
         if key == 'description':
@@ -99,8 +99,6 @@ def weather_message2(data5,location):
                 inline=True
             )
             
-            
-
             elif key == 'temp':
                 message.add_field(
                 name='  Temperature  ',
@@ -182,6 +180,7 @@ def weather_message4(location,aqi):
         )
     
     return message
+    
 def weather_message5():
     message = discord.Embed(
         title='AQI levels',
