@@ -28,5 +28,5 @@ Also, in this process, we took all the information needed for our bot from the f
 We took the following api's for our bot:
 ###### For news alerts: https://www.weatherbit.io/
 ###### For weather information: https://openweathermap.org/
-###### For Aqi information: http://api.airpollutionapi.com/
+###### For Aqi information: http://airpollutionapi.com/
 
