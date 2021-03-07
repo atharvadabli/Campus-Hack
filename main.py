@@ -3,11 +3,13 @@ import requests
 import json
 from weather import *
 from discord.ext.commands import Bot
+from decouple import config
 
-token = 'ODE3NjQ1NjQxNDgzODEyODk1.YEMh2A.gOqlDXhEqM97PU5HkBoDJOSb65I'
-api_key = '3dd56669bb9854ffe5fbacaa2818f7f9'
-api_key2 = 'm17o2uh8c626ljgjuhj9kud0pp'
-api_key3 = 'aae6dc1c35f948b0a66b1b6bb07ac76d'
+
+token = config('token')
+api_key = config('api_key')
+api_key2 = config('api_key2')
+api_key3 = config('api_key3')
 client = discord.Client()
 command_prefix1 = 'mausam.'
 command_prefix2 = 'forecast8days.' 
