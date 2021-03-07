@@ -44,4 +44,5 @@ We took the following api's for our bot:
 ###### For news alerts: https://www.weatherbit.io/
 ###### For weather information: https://openweathermap.org/
 ###### For Aqi information: http://airpollutionapi.com/
-
+PS:
+.env file will be deleted after the hackathon
