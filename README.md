@@ -10,8 +10,10 @@ To run our code, you must do the following installations:
 ######  pip install discord
 ######  pip install requests
 ######  pip install python-decouple
+ 
+Once all the installations were done, we wrote the code and kept increasing the commands one by one and then finally debugged it and finalized it with the following commands.
 
-# Commands:
+## Commands:
 ######  mausam._bot.intro
 ######  mausam.location
 ######  forecast8days.location
@@ -19,6 +21,8 @@ To run our code, you must do the following installations:
 ######  aqi.location 
 ######  val.aqi
 ######  alerts.location
+
+Also, in this process, we took all the information needed for our bot from the following API's:
 
 ## API:
 We took the following api's for our bot:
