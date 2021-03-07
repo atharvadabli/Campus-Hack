@@ -11,6 +11,7 @@ api_key2 = config('api_key2')
 api_key3 = config('api_key3')
 
 client = discord.Client()
+
 command_prefix1 = 'mausam.'
 command_prefix2 = 'forecast8days.' 
 command_prefix3 = 'forecast.'
@@ -18,6 +19,7 @@ command_prefix4 = 'aqi.'
 command_prefix5 = 'val.aqi'
 command_prefix6 = 'alerts.'
 command_prefix7 = 'mausam_bot.intro'
+
 @client.event
 async def on_ready():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='mausam.[location]'))
@@ -113,4 +115,5 @@ async def on_message(message):
         await message.channel.send(embed = weather_message5()) 
     elif message.author != client.user and message.content.startswith(command_prefix7):
         await message.channel.send(embed = bot_intro())
+        
 client.run(token)
