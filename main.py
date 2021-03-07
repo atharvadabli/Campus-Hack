@@ -3,17 +3,21 @@ import requests
 import json
 from weather import *
 from discord.ext.commands import Bot
+from decouple import config
 
-token = 'ODE3NjQ1NjQxNDgzODEyODk1.YEMh2A.gOqlDXhEqM97PU5HkBoDJOSb65I'
-api_key = '3dd56669bb9854ffe5fbacaa2818f7f9'
-api_key2 = 'm17o2uh8c626ljgjuhj9kud0pp'
-api_key3 = 'aae6dc1c35f948b0a66b1b6bb07ac76d'
+token = config('token')
+api_key = config('api_key')
+api_key2 = config('api_key2')
+api_key3 = config('api_key3')
+
 client = discord.Client()
 command_prefix1 = 'mausam.'
 command_prefix2 = 'forecast8days.' 
 command_prefix3 = 'forecast.'
 command_prefix4 = 'aqi.'
+command_prefix5 = 'val.aqi'
 command_prefix6 = 'alerts.'
+command_prefix7 = 'mausam_bot.intro'
 @client.event
 async def on_ready():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='mausam.[location]'))
@@ -104,5 +108,9 @@ async def on_message(message):
                 data8 = (json.loads(requests.get(url5).content)['alerts'])
                 await message.channel.send(embed=weather_message6(data8,location))
             except KeyError:
-                await message.channel.send(embed=error_message(location))    
+                await message.channel.send(embed=error_message(location))   
+    elif message.author != client.user and message.content.startswith(command_prefix5):
+        await message.channel.send(embed = weather_message5()) 
+    elif message.author != client.user and message.content.startswith(command_prefix7):
+        await message.channel.send(embed = bot_intro())
 client.run(token)
