@@ -1,4 +1,7 @@
 # Campus-Hack 2021
+Atharv Dabli
+Kushagra Rode
+Shreya Sonone
 ## Our Bot- Meet our Weather Bot- Mausam!
 
 ## Getting Started:
